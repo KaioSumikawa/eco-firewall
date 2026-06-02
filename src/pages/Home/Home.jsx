@@ -1,11 +1,16 @@
 import './Home.css'
+import { useNavigate } from 'react-router-dom'
 
 import backgroundVideo from '../../assets/background.mp4'
-import gradeImage from '../../assets/grade.png'
 
 export default function Home() {
+  const navigate = useNavigate()
+
   return (
-    <div className="home">
+    <div
+      className="home"
+      onClick={() => navigate('/simon')}
+    >
       <video
         className="background-video"
         autoPlay
@@ -16,13 +21,9 @@ export default function Home() {
         <source src={backgroundVideo} type="video/mp4" />
       </video>
 
-      <img
-        src={gradeImage}
-        alt=""
-        className="hud-frame"
-      />
-
       <div className="overlay" />
+
+
     </div>
   )
 }

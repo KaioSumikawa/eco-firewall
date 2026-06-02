@@ -8,6 +8,8 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+
+  cursor: pointer;
 }
 
 /* ========================= */
@@ -27,50 +29,51 @@
 }
 
 /* ========================= */
-/* ESCURECIMENTO DO VÍDEO */
+/* OVERLAY LEVE */
 /* ========================= */
 
 .overlay {
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.08);
 
   z-index: 2;
-}
-
-/* ========================= */
-/* HUD PNG */
-/* ========================= */
-
-.hud-frame {
-  position: fixed;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
 
   pointer-events: none;
-
-  z-index: 3;
-
-  opacity: 1;
-
-  animation: hudPulse 4s ease-in-out infinite;
 }
 
-@keyframes hudPulse {
-  0% {
-    opacity: 0.85;
-  }
+/* ========================= */
+/* MENSAGEM DE CONTINUAR */
+/* ========================= */
 
-  50% {
+
+
+/* ========================= */
+/* ANIMAÇÃO */
+/* ========================= */
+
+@keyframes blink {
+  0% {
     opacity: 1;
   }
 
+  50% {
+    opacity: 0.35;
+  }
+
   100% {
-    opacity: 0.85;
+    opacity: 1;
+  }
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .continue-message {
+    font-size: 12px;
+    bottom: 20px;
   }
 }
